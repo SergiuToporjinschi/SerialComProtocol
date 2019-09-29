@@ -3,7 +3,7 @@
     "description": "Communication protocol over serial",
     "repository": {
         "type": "git",
-        "url": "https://github.com/SergiuToporjinschi/SerialComProtocol"
+        "url": "https://github.com/SergiuToporjinschi/SerialComProtocol.git"
     },
     "keywords": "ESP, ESP8266, IOT, Arduino, Serial, Protocol",
     "authors": "Sergiu Toporjinschi",
