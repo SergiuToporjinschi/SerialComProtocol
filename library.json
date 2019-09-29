@@ -10,7 +10,7 @@
     "version": "1.0.0",
     "frameworks": "*",
     "platforms": [
-        "espressif8266@2.0.4",
+        "espressif8266",
         "atmelavr"
     ],
     "examples": [
