@@ -12,8 +12,5 @@
     "platforms": [
         "espressif8266",
         "atmelavr"
-    ],
-    "examples": [
-        "examples/*.cpp"
     ]
 }
