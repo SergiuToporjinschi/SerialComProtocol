@@ -7,7 +7,7 @@
     },
     "keywords": "ESP, ESP8266, IOT, Arduino, Serial, Protocol",
     "authors": "Sergiu Toporjinschi",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "frameworks": "*",
     "platforms": [
         "espressif8266",

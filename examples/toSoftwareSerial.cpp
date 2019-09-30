@@ -1,8 +1,8 @@
 /*
 
-  SettingsManager
+  SerialComProtocol
 
-  Copyright (C) 2017 by Sergiu Toporjinschi <sergiu dot toporjinschi at gmail dot com>
+  Copyright (C) 2019 by Sergiu Toporjinschi <sergiu dot toporjinschi at gmail dot com>
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 #include "SoftwareSerial.h"
 #include "debug_macro.h"
 
-#include "SerialTrigger.h"
+#include "SerialComProtocol.h"
 #include <Arduino.h>
 
 SoftwareSerial *dbg;
@@ -39,14 +39,13 @@ void setup() {
   Serial.begin(74880);
   dbg->begin(74880);
 
+  SerialComProtocol::init(&Serial);
 
-  SerialTrigger::init(&Serial);
-
-  SerialTrigger::addKeyCallEvent("conf", [](const char *cmd, const char *value) {
+  SerialComProtocol::addKeyCallEvent("conf", [](const char *cmd, const char *value) {
     DBGLN("cmd: %s; value: %s", cmd == nullptr ? "null" : cmd, value == nullptr ? "null" : value);
   });
 }
 
 void loop() {
-  SerialTrigger::handle();
+  SerialComProtocol::handle();
 }

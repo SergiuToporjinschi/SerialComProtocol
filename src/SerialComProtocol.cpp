@@ -1,10 +1,8 @@
 /*
 
-  SerialTrigger 0.1.0
+  SerialComProtocol
 
-  SerialTrigger
-
-  Copyright (C) 2017 by Sergiu Toporjinschi <sergiu dot toporjinschi at gmail dot com>
+  Copyright (C) 2019 by Sergiu Toporjinschi <sergiu dot toporjinschi at gmail dot com>
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -21,7 +19,7 @@
 
 */
 
-#include "SerialTrigger.h"
+#include "SerialComProtocol.h"
 #include "debug_macro.h"
 #include <Arduino.h>
 
@@ -47,7 +45,7 @@
 #  define SERIAL_TRIGGER_MAX_KEYS 10
 #endif
 
-namespace SerialTrigger {
+namespace SerialComProtocol {
   struct keyCallItem {
     msgCallBack callBack;
     const char *key;
@@ -143,4 +141,4 @@ namespace SerialTrigger {
     _serial->write(SERIAL_TRIGGER_TERMINATE_CHAR); //adding \ns
     _serial->flush();
   }
-} // namespace SerialTrigger
+} // namespace SerialComProtocol

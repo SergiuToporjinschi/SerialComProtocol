@@ -1,11 +1,9 @@
 #pragma once
 /*
 
-  SerialTrigger 0.1.0
+  SerialComProtocol
 
-  SerialTrigger
-
-  Copyright (C) 2017 by Sergiu Toporjinschi <sergiu dot toporjinschi at gmail dot com>
+  Copyright (C) 2019 by Sergiu Toporjinschi <sergiu dot toporjinschi at gmail dot com>
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -22,11 +20,11 @@
 
 */
 
-#ifndef SERIAL_TRIGGER_H
-#  define SERIAL_TRIGGER_H
+#ifndef SERIAL_COM_PROTOCOL_H
+#  define SERIAL_COM_PROTOCOL_H
 #  include <Arduino.h>
 
-namespace SerialTrigger {
+namespace SerialComProtocol {
   typedef void (*msgCallBack)(const char *key, const char *value);
   void init(Stream *serial);
 
@@ -37,6 +35,6 @@ namespace SerialTrigger {
   void addKeyCallEvent_P(const char *command, msgCallBack callBack);
   void addKeyCallEvent(const char *key, msgCallBack callBack);
   void send(const char *string);
-}; // namespace SerialTrigger
+}; // namespace SERIAL_COM_PROTOCOL_H
 
 #endif
