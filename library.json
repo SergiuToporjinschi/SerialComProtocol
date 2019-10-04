@@ -6,7 +6,9 @@
         "url": "https://github.com/SergiuToporjinschi/SerialComProtocol.git"
     },
     "keywords": "ESP, ESP8266, IOT, Arduino, Serial, Protocol",
-    "authors": "Sergiu Toporjinschi",
+    "authors": {
+        "name": "Sergiu Toporjinschi"
+    },
     "version": "1.0.2",
     "frameworks": "*",
     "platforms": [
