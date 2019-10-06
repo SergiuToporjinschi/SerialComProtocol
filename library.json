@@ -1,18 +1,21 @@
 {
     "name": "SerialComProtocol",
+    "version": "1.0.3",
     "description": "Communication protocol over serial",
+    "license": "GPL-3.0-only",
     "repository": {
         "type": "git",
         "url": "https://github.com/SergiuToporjinschi/SerialComProtocol.git"
     },
-    "keywords": "ESP, ESP8266, IOT, Arduino, Serial, Protocol",
+    "keywords": "ESP, ESP32, ESP8266, IOT, Arduino, Serial, Protocol",
     "authors": {
-        "name": "Sergiu Toporjinschi"
+        "name": "Sergiu Toporjinschi",
+        "maintainer": true
     },
-    "version": "1.0.3",
-    "frameworks": "*",
+    "frameworks": "arduino",
     "platforms": [
         "espressif8266",
+        "espressif32",
         "atmelavr"
     ]
 }

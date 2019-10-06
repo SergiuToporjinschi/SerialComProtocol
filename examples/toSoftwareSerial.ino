@@ -6,8 +6,7 @@
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  the Free Software Foundation version 3.
 
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -17,9 +16,8 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
   
-  dependency:
-  ArduinoJson: https://arduinojson.org/
-  
+  All rights reserved
+
 */
 #include "SoftwareSerial.h"
 #include "debug_macro.h"
@@ -27,17 +25,18 @@
 #include "SerialComProtocol.h"
 #include <Arduino.h>
 
-SoftwareSerial *dbg;
+Print *dbg;
 void setup() {
   // pinMode(13, INPUT);
   // pinMode(A3, OUTPUT);
-  // dbg = new SoftwareSerial(A4, A3);
+  // SoftwareSerial softSerial(A4, A3);
   pinMode(13, INPUT);
   pinMode(15, OUTPUT);
-  dbg = new SoftwareSerial(13, 15);
+  SoftwareSerial softSerial(13, 15);
 
   Serial.begin(74880);
-  dbg->begin(74880);
+  softSerial.begin(74880);
+  dbg = &softSerial;
 
   SerialComProtocol::init(&Serial);
 

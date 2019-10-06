@@ -6,8 +6,7 @@
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  the Free Software Foundation version 3.
 
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -16,11 +15,12 @@
 
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  
+  All rights reserved
 
 */
 
 #include "SerialComProtocol.h"
-#include "debug_macro.h"
 #include <Arduino.h>
 
 #undef SERIAL_RX_BUFFER_SIZE
@@ -94,6 +94,7 @@ namespace SerialComProtocol {
     size_t numChars = 0;
     if (_serial->available() > 0) {
       numChars = _serial->readBytesUntil(SERIAL_TRIGGER_TERMINATE_CHAR, _line, SERIAL_TRIGGER_LINE_BUFFER);
+      DBGLN("available %i", numChars);
       if (numChars > 0 && _line[numChars - 1] == SERIAL_TRIGGER_COMPLEATE_CHAR) {
         _line[numChars - 1] = 0;
         char *line = strdup(_line);
